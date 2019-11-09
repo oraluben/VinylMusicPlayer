@@ -11,6 +11,7 @@ buildscript {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'jacoco'
 
 static def execAndCaptureOutput(String cmd) {
     def output = ''
@@ -67,6 +68,7 @@ android {
         debug {
             applicationIdSuffix '.debug'
             versionNameSuffix ' DEBUG '
+            testCoverageEnabled true
         }
     }
     signingConfigs {
